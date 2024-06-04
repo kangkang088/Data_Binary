@@ -1,0 +1,12 @@
+1.Excel文件应放置在ArtRes/Excel中
+如果想要修改，请修改ExcelTool.cs中EXCEL_PATH变量
+2.配表规则
+	第一行：字段名
+	第二行：字段类型（请保证正确，目前只支持int，string，bool，float）
+	如果想要扩展，则在ExcelTool的GenerateExcelBinaryData方法和BinaryDataMgr的LoadTable方法中添加逻辑
+	第三行：主键是哪一个字段，通过key来表示主键
+	第四行：描述信息
+	第五行~第n行：具体数据信息
+	表名决定数据结构类，容器类，二进制文件的文件名
+3.生成的容器类和数据结构类可以根据ExcelTool的DATACLASS_PATH和DATACONTAINER_PATH来修改路径
+4.生成二进制文件的路径可以根据BinaryDataMgr的DATABINARYDATA_PATH来修改
